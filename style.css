@@ -1,0 +1,459 @@
+/* ===================================================
+   FÉLIX CABALLERO — PORTAFOLIO
+   Diseño: editorial minimalista, tarjetas planas,
+   acento único, mucho aire, tipografía como protagonista.
+=================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root{
+  --ink:#141414;
+  --paper:#f6f4ef;
+  --paper-2:#ece8df;
+  --line:#dedad0;
+  --muted:#6b665c;
+  --accent:#c65d2e;
+  --accent-ink:#f6f4ef;
+  --radius:2px;
+  --wrap:1080px;
+}
+
+*{box-sizing:border-box;}
+
+html{scroll-behavior:smooth;}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Space Grotesk', sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+
+a{color:inherit;}
+
+.mono{font-family:'JetBrains Mono', monospace;}
+
+.wrap{
+  max-width:var(--wrap);
+  margin:0 auto;
+  padding:0 28px;
+}
+
+/* ---------- Top bar ---------- */
+header.top{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:var(--paper);
+  border-bottom:1px solid var(--line);
+}
+
+.top-inner{
+  max-width:var(--wrap);
+  margin:0 auto;
+  padding:18px 28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.brand{
+  font-weight:700;
+  font-size:16px;
+  letter-spacing:0.02em;
+  text-decoration:none;
+  display:flex;
+  align-items:baseline;
+  gap:6px;
+}
+
+.brand span{
+  color:var(--accent);
+}
+
+nav.top-nav ul{
+  list-style:none;
+  display:flex;
+  gap:28px;
+  margin:0;
+  padding:0;
+}
+
+nav.top-nav a{
+  text-decoration:none;
+  font-size:13px;
+  font-family:'JetBrains Mono', monospace;
+  color:var(--muted);
+  letter-spacing:0.03em;
+  text-transform:uppercase;
+  padding-bottom:3px;
+  border-bottom:1px solid transparent;
+  transition:.2s;
+}
+
+nav.top-nav a:hover{
+  color:var(--ink);
+  border-bottom-color:var(--accent);
+}
+
+.menu-btn{
+  display:none;
+  background:none;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  width:38px;
+  height:38px;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+
+.menu-btn span, .menu-btn span::before, .menu-btn span::after{
+  content:'';
+  display:block;
+  width:16px;
+  height:1.5px;
+  background:var(--ink);
+  position:relative;
+}
+.menu-btn span::before{position:absolute; top:-5px;}
+.menu-btn span::after{position:absolute; top:5px;}
+
+/* ---------- Hero ---------- */
+.hero{
+  padding:90px 0 70px;
+  border-bottom:1px solid var(--line);
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.4fr 0.9fr;
+  gap:60px;
+  align-items:center;
+}
+
+.eyebrow{
+  font-family:'JetBrains Mono', monospace;
+  font-size:13px;
+  color:var(--accent);
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  margin:0 0 18px;
+}
+
+.hero h1{
+  font-size:56px;
+  line-height:1.05;
+  margin:0 0 20px;
+  font-weight:700;
+  letter-spacing:-0.02em;
+}
+
+.hero p.lead{
+  font-size:17px;
+  color:var(--muted);
+  max-width:480px;
+  line-height:1.6;
+  margin:0 0 30px;
+}
+
+.btn-row{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:12px 22px;
+  border-radius:var(--radius);
+  font-size:13px;
+  font-family:'JetBrains Mono', monospace;
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+  border:1px solid var(--ink);
+  transition:.2s;
+}
+
+.btn.solid{
+  background:var(--ink);
+  color:var(--paper);
+}
+.btn.solid:hover{
+  background:var(--accent);
+  border-color:var(--accent);
+}
+
+.btn.ghost{
+  background:transparent;
+  color:var(--ink);
+}
+.btn.ghost:hover{
+  background:var(--ink);
+  color:var(--paper);
+}
+
+.hero-photo{
+  position:relative;
+}
+
+.hero-photo img{
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  border-radius:var(--radius);
+  filter:grayscale(15%);
+  border:1px solid var(--line);
+}
+
+.hero-photo .tag-float{
+  position:absolute;
+  bottom:-16px;
+  left:-16px;
+  background:var(--ink);
+  color:var(--paper);
+  padding:10px 16px;
+  font-family:'JetBrains Mono', monospace;
+  font-size:12px;
+  border-radius:var(--radius);
+}
+
+/* ---------- Section shell ---------- */
+section{
+  padding:70px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  margin-bottom:40px;
+  gap:20px;
+}
+
+.section-head h2{
+  font-size:30px;
+  margin:0;
+  font-weight:700;
+  letter-spacing:-0.01em;
+}
+
+.section-num{
+  font-family:'JetBrains Mono', monospace;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* ---------- About ---------- */
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+}
+
+.about-grid p{
+  color:var(--muted);
+  line-height:1.75;
+  font-size:15.5px;
+  margin:0 0 16px;
+}
+
+.chip-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:22px;
+}
+
+.chip{
+  font-family:'JetBrains Mono', monospace;
+  font-size:12px;
+  padding:6px 12px;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  color:var(--ink);
+  background:var(--paper-2);
+}
+
+.facts{
+  border-top:1px solid var(--line);
+  margin-top:10px;
+}
+
+.fact{
+  display:flex;
+  justify-content:space-between;
+  padding:14px 0;
+  border-bottom:1px solid var(--line);
+  font-size:14px;
+}
+
+.fact span:first-child{
+  color:var(--muted);
+  font-family:'JetBrains Mono', monospace;
+  font-size:12px;
+  text-transform:uppercase;
+}
+
+/* ---------- Grids: proyectos / certificados ---------- */
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+}
+
+.card{
+  background:var(--paper);
+  padding:26px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  min-height:190px;
+}
+
+.card .k{
+  font-family:'JetBrains Mono', monospace;
+  font-size:11px;
+  color:var(--accent);
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+}
+
+.card h3{
+  margin:0;
+  font-size:17px;
+  font-weight:600;
+}
+
+.card p{
+  margin:0;
+  font-size:13.5px;
+  color:var(--muted);
+  line-height:1.55;
+  flex-grow:1;
+}
+
+.card a.open{
+  font-family:'JetBrains Mono', monospace;
+  font-size:12px;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  color:var(--ink);
+  border-bottom:1px solid var(--ink);
+  align-self:flex-start;
+  padding-bottom:2px;
+}
+
+.card a.open:hover{
+  color:var(--accent);
+  border-color:var(--accent);
+}
+
+/* ---------- Contact ---------- */
+.contact-inner{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.contact-inner h2{
+  font-size:34px;
+  margin:0 0 16px;
+  font-weight:700;
+}
+
+.contact-inner p{
+  color:var(--muted);
+  line-height:1.7;
+  margin:0 0 24px;
+  max-width:420px;
+}
+
+.contact-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.contact-list li{
+  border-top:1px solid var(--line);
+}
+.contact-list li:last-child{border-bottom:1px solid var(--line);}
+
+.contact-list a{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 4px;
+  text-decoration:none;
+  font-size:16px;
+  font-weight:500;
+  transition:.2s;
+}
+
+.contact-list a:hover{
+  color:var(--accent);
+  padding-left:12px;
+}
+
+.contact-list a span{
+  font-family:'JetBrains Mono', monospace;
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* ---------- Footer ---------- */
+footer{
+  padding:26px 0;
+}
+
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  font-family:'JetBrains Mono', monospace;
+  font-size:12px;
+  color:var(--muted);
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width:860px){
+  nav.top-nav{
+    position:fixed;
+    top:73px;
+    left:0;
+    right:0;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+    display:none;
+    padding:20px 28px;
+  }
+  nav.top-nav.open{display:block;}
+  nav.top-nav ul{flex-direction:column; gap:16px;}
+  .menu-btn{display:flex;}
+
+  .hero-grid{grid-template-columns:1fr;}
+  .hero h1{font-size:38px;}
+  .hero-photo{max-width:280px; margin:0 auto;}
+
+  .about-grid{grid-template-columns:1fr; gap:30px;}
+  .card-grid{grid-template-columns:1fr;}
+  .contact-inner{grid-template-columns:1fr; gap:30px;}
+  .section-head{flex-direction:column; align-items:flex-start; gap:8px;}
+}
+
+@media (max-width:600px){
+  .top-inner{padding:16px 20px;}
+  .wrap{padding:0 20px;}
+}
